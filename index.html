@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>backe creative.co | Marketing para empresas acima de 50M/mes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --orange-top: #F07A2E;
+      --orange-mid: #F2642F;
+      --red-bottom: #FF4B3E;
+      --black-main: #111111;
+      --black-deep: #0C0C0C;
+      --gray-dark: #6B6B6B;
+      --gray-light: #E6E6E6;
+      --white-soft: #F2F2F2;
+      --gradient-main: linear-gradient(140deg, var(--orange-top) 0%, var(--orange-mid) 48%, var(--red-bottom) 100%);
+      --radius-xl: 24px;
+      --radius-lg: 16px;
+      --radius-md: 10px;
+      --container: min(1160px, calc(100vw - 2.4rem));
+      --space-section: 5.2rem;
+    }
+
+    html[data-theme="dark"] {
+      --bg: var(--black-deep);
+      --bg-soft: var(--black-main);
+      --surface: var(--black-main);
+      --surface-soft: var(--black-deep);
+      --text: var(--white-soft);
+      --muted: var(--gray-light);
+      --line: rgba(230, 230, 230, 0.16);
+      --line-soft: rgba(230, 230, 230, 0.1);
+      --topbar-bg: rgba(17, 17, 17, 0.86);
+      --shadow: 0 14px 30px rgba(12, 12, 12, 0.28);
+      --soft-shadow: 0 6px 16px rgba(12, 12, 12, 0.22);
+      --button-text: var(--white-soft);
+      --button-surface: var(--black-main);
+      --theme-chip-bg: rgba(230, 230, 230, 0.08);
+      --theme-chip-active-text: var(--white-soft);
+    }
+
+    html[data-theme="light"] {
+      --bg: var(--white-soft);
+      --bg-soft: var(--gray-light);
+      --surface: var(--white-soft);
+      --surface-soft: var(--gray-light);
+      --text: var(--black-main);
+      --muted: var(--gray-dark);
+      --line: rgba(17, 17, 17, 0.2);
+      --line-soft: rgba(17, 17, 17, 0.12);
+      --topbar-bg: rgba(242, 242, 242, 0.86);
+      --shadow: 0 12px 26px rgba(107, 107, 107, 0.2);
+      --soft-shadow: 0 5px 14px rgba(107, 107, 107, 0.14);
+      --button-text: var(--black-main);
+      --button-surface: var(--white-soft);
+      --theme-chip-bg: rgba(17, 17, 17, 0.06);
+      --theme-chip-active-text: var(--white-soft);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Manrope", sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-image:
+        radial-gradient(circle at 14% 10%, rgba(240, 122, 46, 0.12), transparent 34%),
+        radial-gradient(circle at 88% 8%, rgba(255, 75, 62, 0.1), transparent 30%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
+      background-attachment: fixed;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: var(--container);
+      margin: 0 auto;
+    }
+
+    .section {
+      scroll-margin-top: 98px;
+      padding: var(--space-section) 0;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line-soft);
+      background: var(--topbar-bg);
+    }
+
+    .topbar-wrap {
+      width: var(--container);
+      margin: 0 auto;
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .brand-mark {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 700;
+      font-size: 2.7rem;
+      line-height: 0.65;
+      letter-spacing: -0.08em;
+      background: var(--gradient-main);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .brand-copy {
+      font-size: 0.71rem;
+      letter-spacing: 0.15em;
+      line-height: 1.05;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+
+    .menu {
+      margin-left: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .menu a {
+      font-size: 0.74rem;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      border: 1px solid var(--line-soft);
+      border-radius: 999px;
+      padding: 0.52rem 0.8rem;
+      color: var(--muted);
+      transition: 0.22s ease;
+    }
+
+    .menu a:hover,
+    .menu a:focus-visible {
+      color: var(--text);
+      border-color: var(--line);
+      background: rgba(242, 242, 242, 0.04);
+      outline: none;
+    }
+
+    .top-controls {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-shrink: 0;
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--button-surface);
+      color: var(--button-text);
+      min-height: 36px;
+      padding: 0.35rem 0.82rem;
+      font: inherit;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .menu-toggle:hover {
+      border-color: rgba(240, 122, 46, 0.6);
+    }
+
+    .theme-switch {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.12rem;
+      border: 1px solid var(--line-soft);
+      border-radius: 999px;
+      padding: 0.16rem;
+      background: var(--theme-chip-bg);
+    }
+
+    .theme-switch button {
+      border: none;
+      font: inherit;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 999px;
+      min-height: 32px;
+      min-width: 68px;
+      padding: 0.32rem 0.56rem;
+      cursor: pointer;
+      color: var(--muted);
+      background: transparent;
+      transition: 0.22s ease;
+    }
+
+    .theme-switch button.is-active {
+      background: var(--gradient-main);
+      color: var(--theme-chip-active-text);
+    }
+
+    .hero {
+      position: relative;
+      overflow: clip;
+      padding-top: 6.2rem;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -140px;
+      right: -120px;
+      width: 300px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(240, 122, 46, 0.26), rgba(255, 75, 62, 0.08), transparent 72%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 2.5rem;
+      align-items: center;
+      grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      border-radius: 12px;
+      border: 1px solid rgba(240, 122, 46, 0.34);
+      background: rgba(240, 122, 46, 0.08);
+      color: var(--text);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.73rem;
+      padding: 0.46rem 0.84rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 600;
+      font-size: clamp(2.5rem, 5.2vw, 4.8rem);
+      line-height: 0.9;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+      max-width: 13ch;
+    }
+
+    .gradient-text {
+      background: var(--gradient-main);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 1.03rem;
+      line-height: 1.66;
+      max-width: 56ch;
+      margin-bottom: 1.6rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      border: 1px solid transparent;
+      border-radius: 999px;
+      min-height: 44px;
+      padding: 0.75rem 1.18rem;
+      font: inherit;
+      font-size: 0.88rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: 0.22s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      background: var(--gradient-main);
+      color: var(--white-soft);
+      box-shadow: none;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      filter: saturate(1.08);
+    }
+
+    .btn-secondary {
+      background: var(--button-surface);
+      color: var(--button-text);
+      border-color: var(--line);
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(240, 122, 46, 0.56);
+      color: var(--text);
+    }
+
+    .hero-proof {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .hero-proof span::before {
+      content: "";
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      margin-right: 0.5rem;
+      background: var(--gradient-main);
+      vertical-align: middle;
+    }
+
+    .hero-card {
+      border: 1px solid var(--line-soft);
+      border-radius: var(--radius-xl);
+      background: var(--surface);
+      box-shadow: var(--soft-shadow);
+      min-height: 374px;
+      padding: 1.5rem;
+      display: grid;
+      align-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      right: -28%;
+      bottom: -38%;
+      width: 220px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(242, 100, 47, 0.12), rgba(255, 75, 62, 0.04), transparent 70%);
+      pointer-events: none;
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.76rem;
+      color: var(--muted);
+    }
+
+    .card-tag {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0.32rem 0.58rem;
+      background: rgba(242, 242, 242, 0.04);
+    }
+
+    .card-value {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 700;
+      font-size: clamp(2.3rem, 4vw, 3.2rem);
+      letter-spacing: -0.02em;
+      line-height: 0.9;
+      margin: 0.4rem 0 0.8rem;
+    }
+
+    .card-desc {
+      color: var(--muted);
+      line-height: 1.58;
+      margin-bottom: 1.2rem;
+    }
+
+    .mini-stats {
+      display: grid;
+      gap: 0.72rem;
+    }
+
+    .mini {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: baseline;
+      border: 1px solid var(--line-soft);
+      border-radius: var(--radius-md);
+      background: var(--surface-soft);
+      padding: 0.74rem 0.8rem;
+    }
+
+    .mini b {
+      color: var(--text);
+      font-size: 0.93rem;
+    }
+
+    .mini small {
+      color: var(--muted);
+      font-size: 0.74rem;
+    }
+
+    .section-head {
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 1rem;
+    }
+
+    .section-title {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 600;
+      font-size: clamp(2rem, 3vw, 3rem);
+      line-height: 0.93;
+      max-width: 14ch;
+      letter-spacing: -0.02em;
+    }
+
+    .section-note {
+      color: var(--muted);
+      line-height: 1.66;
+      max-width: 52ch;
+      font-size: 0.97rem;
+    }
+
+    .cards {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .info-card {
+      border: 1px solid var(--line-soft);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      box-shadow: none;
+      min-height: 222px;
+      padding: 1.24rem;
+      transform: translateY(14px);
+      opacity: 0;
+      transition: transform 0.55s ease, opacity 0.55s ease;
+    }
+
+    .info-card.show {
+      transform: none;
+      opacity: 1;
+    }
+
+    .info-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      border: 1px solid rgba(240, 122, 46, 0.28);
+      background: rgba(242, 100, 47, 0.08);
+      color: var(--text);
+      display: grid;
+      place-items: center;
+      margin-bottom: 0.9rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .info-title {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 600;
+      font-size: 1.5rem;
+      line-height: 0.94;
+      margin-bottom: 0.48rem;
+    }
+
+    .info-text {
+      color: var(--muted);
+      line-height: 1.62;
+      font-size: 0.93rem;
+    }
+
+    .metrics {
+      border: 1px solid var(--line-soft);
+      border-radius: var(--radius-xl);
+      background: var(--surface);
+      box-shadow: none;
+      padding: 1.5rem;
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .metric {
+      border-right: 1px solid var(--line-soft);
+      padding-right: 0.82rem;
+    }
+
+    .metric:last-child {
+      border-right: 0;
+      padding-right: 0;
+    }
+
+    .metric h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 700;
+      font-size: clamp(2.1rem, 3vw, 2.7rem);
+      line-height: 0.9;
+      margin-bottom: 0.16rem;
+      color: var(--text);
+    }
+
+    .metric p {
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.54;
+    }
+
+    .qualify {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      align-items: stretch;
+    }
+
+    .qualify-copy,
+    .qualify-form {
+      border: 1px solid var(--line-soft);
+      border-radius: var(--radius-xl);
+      background: var(--surface);
+      box-shadow: none;
+      padding: 1.5rem;
+    }
+
+    .qualify-copy h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 600;
+      font-size: clamp(1.9rem, 3vw, 2.5rem);
+      line-height: 0.92;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.9rem;
+    }
+
+    .qualify-copy p {
+      color: var(--muted);
+      line-height: 1.66;
+      margin-bottom: 1rem;
+    }
+
+    .qualify-list {
+      list-style: none;
+      display: grid;
+      gap: 0.68rem;
+    }
+
+    .qualify-list li {
+      border: 1px solid var(--line-soft);
+      border-radius: 10px;
+      background: var(--surface-soft);
+      color: var(--text);
+      padding: 0.74rem 0.82rem;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .qualify-form form {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .qualify-form label {
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+      display: block;
+    }
+
+    .qualify-form input,
+    .qualify-form select,
+    .qualify-form textarea {
+      width: 100%;
+      min-height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--surface-soft);
+      color: var(--text);
+      padding: 0.82rem 0.9rem;
+      font: inherit;
+    }
+
+    .qualify-form textarea {
+      min-height: 108px;
+      resize: vertical;
+    }
+
+    .qualify-form input:focus,
+    .qualify-form select:focus,
+    .qualify-form textarea:focus {
+      border-color: rgba(240, 122, 46, 0.78);
+      outline: 2px solid rgba(242, 100, 47, 0.22);
+      outline-offset: 1px;
+    }
+
+    .footer {
+      padding: 2.3rem 0 3.2rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .footer-wrap {
+      width: var(--container);
+      margin: 0 auto;
+      border-top: 1px solid var(--line-soft);
+      padding-top: 1.1rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.62s ease forwards;
+    }
+
+    .fade-in.delay-1 {
+      animation-delay: 0.1s;
+    }
+
+    .fade-in.delay-2 {
+      animation-delay: 0.2s;
+    }
+
+    .fade-in.delay-3 {
+      animation-delay: 0.3s;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .qualify {
+        grid-template-columns: 1fr;
+      }
+
+      .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .metric {
+        border-right: 0;
+        border-bottom: 1px solid var(--line-soft);
+        padding-bottom: 0.9rem;
+      }
+
+      .metric:nth-child(3),
+      .metric:nth-child(4) {
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .topbar-wrap {
+        padding: 0.8rem 0;
+        align-items: center;
+        min-height: auto;
+        flex-wrap: wrap;
+      }
+
+      .menu {
+        order: 3;
+        width: 100%;
+        margin-left: 0;
+        justify-content: flex-start;
+      }
+
+      .menu a {
+        padding: 0.44rem 0.7rem;
+      }
+
+      .top-controls {
+        margin-left: auto;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .section {
+        scroll-margin-top: 130px;
+      }
+
+      .topbar-wrap {
+        gap: 0.5rem;
+        padding: 0.72rem 0;
+      }
+
+      .brand-copy {
+        font-size: 0.64rem;
+      }
+
+      .top-controls {
+        margin-left: auto;
+        gap: 0.45rem;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .theme-switch {
+        padding: 0.16rem;
+      }
+
+      .theme-switch button {
+        min-width: 60px;
+        min-height: 32px;
+        padding: 0.32rem 0.5rem;
+        font-size: 0.64rem;
+      }
+
+      .menu {
+        order: 4;
+        width: 100%;
+        margin-left: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.46rem;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: var(--surface);
+        box-shadow: var(--soft-shadow);
+        padding: 0.64rem;
+      }
+
+      .menu.is-open {
+        display: flex;
+      }
+
+      .menu a {
+        width: 100%;
+        border: 1px solid var(--line-soft);
+        border-radius: 10px;
+        background: var(--surface-soft);
+        color: var(--text);
+        padding: 0.62rem 0.74rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      :root {
+        --space-section: 3.8rem;
+      }
+
+      .hero {
+        padding-top: 4.8rem;
+      }
+
+      .brand-mark {
+        font-size: 2.2rem;
+      }
+
+      .cards,
+      .metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .metric {
+        border-bottom: 1px solid var(--line-soft);
+      }
+
+      .metric:last-child {
+        border-bottom: 0;
+      }
+
+      .section-head {
+        align-items: start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-wrap">
+      <a class="brand" href="#inicio" aria-label="backe creative.co">
+        <span class="brand-mark">ba</span>
+        <span class="brand-copy">creative<br>.co</span>
+      </a>
+
+      <nav class="menu" id="primary-menu" aria-label="Navegacao principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#metodo">Metodo</a>
+        <a href="#resultados">Resultados</a>
+        <a href="#qualificacao">Qualificacao</a>
+      </nav>
+
+      <div class="top-controls">
+        <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="primary-menu">Menu</button>
+        <div class="theme-switch" role="group" aria-label="Alternar tema">
+          <button type="button" data-theme-option="light" aria-pressed="false">Claro</button>
+          <button type="button" data-theme-option="dark" aria-pressed="true">Escuro</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <div class="pill fade-in">Agencia seletiva para marcas enterprise</div>
+          <h1 class="fade-in delay-1">Escala com criterio para empresas que lideram seus mercados.</h1>
+          <p class="fade-in delay-2">
+            Desenhamos estrategia, midia e criativos para companhias de alta receita que exigem crescimento previsivel, margem protegida e execucao de elite.
+          </p>
+          <div class="hero-actions fade-in delay-2">
+            <a class="btn btn-primary" href="#qualificacao">Solicitar diagnostico</a>
+            <a class="btn btn-secondary" href="#metodo">Ver abordagem</a>
+          </div>
+          <div class="hero-proof fade-in delay-3">
+            <span>Atendimento limitado por ciclo</span>
+            <span>Squad senior dedicado</span>
+            <span>Gestao orientada a lucro</span>
+          </div>
+        </div>
+
+        <aside class="hero-card fade-in delay-2" aria-label="Resumo de impacto">
+          <div>
+            <div class="card-top">
+              <strong>Inteligencia de contas premium</strong>
+              <span class="card-tag">Curadoria Backe</span>
+            </div>
+            <p class="card-desc">Operacao desenhada para liderancas que precisam crescer com velocidade e manter eficiencia comercial.</p>
+            <div class="card-value gradient-text">+28.7% ROAS</div>
+          </div>
+          <div class="mini-stats">
+            <div class="mini">
+              <small>Media de investimento ativo</small>
+              <b>R$ 143M/mes</b>
+            </div>
+            <div class="mini">
+              <small>Tempo medio para tracao</small>
+              <b>21 dias</b>
+            </div>
+            <div class="mini">
+              <small>Retencao media de parceria</small>
+              <b>17 meses</b>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="metodo">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Um modelo de marketing exclusivo para empresas em escala real</h2>
+          <p class="section-note">
+            Combinamos estrategia comercial, arquitetura de canais e producao criativa em ciclos curtos para acelerar receita com previsibilidade.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="info-card">
+            <div class="info-icon">01</div>
+            <h3 class="info-title">Planejamento Executivo</h3>
+            <p class="info-text">Diagnostico profundo de funil, oferta e alocacao para mapear ganhos reais e priorizar o que gera margem.</p>
+          </article>
+          <article class="info-card">
+            <div class="info-icon">02</div>
+            <h3 class="info-title">Engenharia de Midia</h3>
+            <p class="info-text">Estrutura de campanhas em camadas para captacao, expansao e rentabilidade com governanca semanal.</p>
+          </article>
+          <article class="info-card">
+            <div class="info-icon">03</div>
+            <h3 class="info-title">Estudio Criativo Premium</h3>
+            <p class="info-text">Direcao criativa, roteiros e variacoes de anuncios com foco em decisao de compra e ganho de conversao.</p>
+          </article>
+          <article class="info-card">
+            <div class="info-icon">04</div>
+            <h3 class="info-title">Inteligencia de Dados</h3>
+            <p class="info-text">Painel executivo com leitura de margem, CAC, LTV e contribuicao de cada canal para decisao rapida.</p>
+          </article>
+          <article class="info-card">
+            <div class="info-icon">05</div>
+            <h3 class="info-title">Growth Council Mensal</h3>
+            <p class="info-text">Ritual estrategico com lideranca para revisar riscos, performance e oportunidades de crescimento.</p>
+          </article>
+          <article class="info-card">
+            <div class="info-icon">06</div>
+            <h3 class="info-title">Operacao de Escala</h3>
+            <p class="info-text">Squad senior com execucao disciplinada, validacao constante e alinhamento direto com C-level.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="resultados">
+      <div class="container">
+        <div class="metrics">
+          <article class="metric">
+            <h3 data-target="92">0%</h3>
+            <p>de contas ativam dois ou mais canais sem comprometer margem.</p>
+          </article>
+          <article class="metric">
+            <h3 data-target="31">0%</h3>
+            <p>de aumento medio em receita incremental no primeiro trimestre.</p>
+          </article>
+          <article class="metric">
+            <h3 data-target="18">0 dias</h3>
+            <p>para implementar o plano completo de midia e criativos.</p>
+          </article>
+          <article class="metric">
+            <h3 data-target="4.2">0x</h3>
+            <p>de ROAS medio nas campanhas de expansao em contas maduras.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="qualificacao">
+      <div class="container qualify">
+        <div class="qualify-copy">
+          <h3>Processo de selecao para novos clientes</h3>
+          <p>Mantemos uma carteira enxuta para garantir profundidade estrategica. Cada parceria passa por avaliacao de aderencia e potencial de escala.</p>
+          <ul class="qualify-list">
+            <li>Receita mensal estruturada e metas claras de crescimento</li>
+            <li>Disponibilidade de verba para midia e criativos de alto nivel</li>
+            <li>Responsavel executivo com decisao semanal sobre o projeto</li>
+          </ul>
+        </div>
+
+        <div class="qualify-form">
+          <form action="#" method="post">
+            <div>
+              <label for="nome">Nome</label>
+              <input id="nome" name="nome" type="text" placeholder="Nome completo" required />
+            </div>
+            <div>
+              <label for="empresa">Empresa</label>
+              <input id="empresa" name="empresa" type="text" placeholder="Nome da empresa" required />
+            </div>
+            <div>
+              <label for="nicho">Nicho da empresa</label>
+              <input id="nicho" name="nicho" type="text" placeholder="Ex: tecnologia, educacao, saude, varejo premium" required />
+            </div>
+            <div>
+              <label for="email">E-mail Corporativo</label>
+              <input id="email" name="email" type="email" placeholder="voce@empresa.com" required />
+            </div>
+            <div>
+              <label for="receita">Faixa de faturamento mensal</label>
+              <select id="receita" name="receita" required>
+                <option value="" disabled selected>Selecione a faixa</option>
+                <option>Abaixo de R$ 50M</option>
+                <option>R$ 50M a R$ 80M</option>
+                <option>R$ 80M a R$ 120M</option>
+                <option>Acima de R$ 120M</option>
+              </select>
+            </div>
+            <div>
+              <label for="desafio">Maior desafio de crescimento hoje</label>
+              <textarea id="desafio" name="desafio" placeholder="Descreva o gargalo principal e o resultado que sua empresa espera destravar."></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Enviar candidatura</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-wrap">
+      <p><strong>backe creative.co</strong> | Agencia exclusiva de marketing para empresas em fase de escala.</p>
+      <p>contato@backecreative.co</p>
+    </div>
+  </footer>
+
+  <script>
+    const cardsObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          cardsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll(".info-card").forEach((card) => cardsObserver.observe(card));
+
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = parseFloat(el.dataset.target);
+        const isDecimal = String(target).includes(".");
+        const suffix = el.textContent.includes("x") ? "x" : el.textContent.includes("dias") ? " dias" : "%";
+        let current = 0;
+        const duration = 1200;
+        const stepTime = 16;
+        const steps = duration / stepTime;
+        const increment = target / steps;
+
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+          }
+          el.textContent = isDecimal ? current.toFixed(1) + suffix : Math.round(current) + suffix;
+        }, stepTime);
+
+        countObserver.unobserve(el);
+      });
+    }, { threshold: 0.65 });
+
+    document.querySelectorAll(".metric h3").forEach((item) => countObserver.observe(item));
+
+    const THEME_KEY = "backe-theme";
+    const root = document.documentElement;
+    const themeButtons = document.querySelectorAll("[data-theme-option]");
+    const menuToggle = document.querySelector("[data-menu-toggle]");
+    const navMenu = document.getElementById("primary-menu");
+
+    const applyTheme = (theme) => {
+      root.setAttribute("data-theme", theme);
+      themeButtons.forEach((button) => {
+        const isActive = button.dataset.themeOption === theme;
+        button.classList.toggle("is-active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
+      });
+    };
+
+    let initialTheme = "dark";
+    try {
+      const storedTheme = localStorage.getItem(THEME_KEY);
+      if (storedTheme === "light" || storedTheme === "dark") {
+        initialTheme = storedTheme;
+      }
+    } catch (error) {
+      initialTheme = "dark";
+    }
+
+    applyTheme(initialTheme);
+
+    themeButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const selectedTheme = button.dataset.themeOption;
+        applyTheme(selectedTheme);
+        try {
+          localStorage.setItem(THEME_KEY, selectedTheme);
+        } catch (error) {
+          /* sem persistencia */
+        }
+      });
+    });
+
+    const closeMobileMenu = () => {
+      if (!menuToggle || !navMenu) return;
+      navMenu.classList.remove("is-open");
+      menuToggle.setAttribute("aria-expanded", "false");
+    };
+
+    if (menuToggle && navMenu) {
+      menuToggle.addEventListener("click", () => {
+        const isOpen = navMenu.classList.toggle("is-open");
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+      });
+
+      navMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          if (window.innerWidth <= 760) {
+            closeMobileMenu();
+          }
+        });
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 760) {
+          closeMobileMenu();
+        }
+      });
+    }
+  </script>
+</body>
+</html>
